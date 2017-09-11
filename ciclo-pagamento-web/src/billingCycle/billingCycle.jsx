@@ -1,7 +1,48 @@
-import React from 'react'
+import React, {Component} from 'react'
 
-export default props => (
-    <div>
-        <h1>Biling Cycle</h1>
-    </div>    
-)
+import ContentHeader from '../common/template/contentHeader'
+import Content from '../common/template/content'
+import Tabs from    '../common/tab/tabs'
+import TabsContent from    '../common/tab/tabsContent'
+import TabContent from    '../common/tab/tabContent'
+import TabsHeader from    '../common/tab/tabsHeader'
+import TabHeader from    '../common/tab/tabHeader'
+
+class BillingCycle extends Component {
+
+    render() {
+        return (
+            <div>
+                <ContentHeader title="Ciclos de Pagamento" small="Cadastro"/>
+                <Content>
+                    <Tabs>
+                        <TabsHeader>
+                            <TabHeader label="Listar" icon="bars" target="tabList"/>
+                            <TabHeader label="Incluir" icon="plus" target="tabCreate"/>
+                            <TabHeader label="Alterar" icon="pensil" target="tabUpdate"/>
+                            <TabHeader label="Excluir" icon="trash-o" target="tabDelete"/>
+                        </TabsHeader>
+                        <TabsContent>
+                            <TabContent id="tabList">
+                                <h1>Lista</h1>
+                            </TabContent>
+                            <TabContent id="tabCreate">
+                                <h1>Icluir</h1>
+                            </TabContent>
+                            <TabContent id="tabUpdate">
+                                <h1>Alterar</h1>
+                            </TabContent>
+                            <TabContent id="tabDelete">
+                                <h1>Apagar</h1>
+                            </TabContent>
+                        </TabsContent>
+                    </Tabs>
+                </Content>
+            </div>
+        )
+    }
+}
+
+export default BillingCycle
+
+
