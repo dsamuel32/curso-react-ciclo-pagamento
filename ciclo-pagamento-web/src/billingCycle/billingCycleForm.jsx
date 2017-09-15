@@ -5,7 +5,7 @@ import {bindActionCreators} from 'redux'
 
 import LabelAndInput from '../common/form/labelAndInput'
 import {init} from './billingCycleActions'
-import CreditList from './creditList'
+import ItemList from './itemList'
 
 class BillingCycleForm extends Component {
     render() {
@@ -21,7 +21,16 @@ class BillingCycleForm extends Component {
                            label="Mês" cols="12 4" placeholder="Informe o mês" readOnly={readOnly}/>
                     <Field name="year" component={LabelAndInput} type="number"
                            label="Ano" cols="12 4" placeholder="Informe o ano" readOnly={readOnly}/>
-                    <CreditList cols="12 6" readOnly={readOnly} list={credits}/>
+                    <ItemList cols="12 6" 
+                              readOnly={readOnly} 
+                              list={credits}
+                              field="credits"
+                              legend="Créditos"/>
+                    <ItemList cols="12 6" 
+                              readOnly={readOnly} 
+                              list={credits}
+                              field="debts"
+                              legend="Débitos"/>
                 </div>
                 <div className="box-footer">
                     <button type="submit" className={`btn btn-${this.props.submitClass}`}>
